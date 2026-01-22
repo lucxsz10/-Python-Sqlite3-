@@ -13,15 +13,16 @@ if response.status_code != 200:
     raise Exception('Erro ao acessar a API')
 data = response.json()
 
-tabela = input("""
-               
-Escolha a tabela que deseja visualizar:
-1 - Cotação do Dólar
-2 - Cotação do Euro     
-3 - Cotação do Peso Argentino
-    
-               
-               """)
+tabela = int(input("""
+                   
+            Digite o número da tabela que deseja visualizar:
+            1 - Cotacao do Dólar
+            2 - Cotacao do Euro
+            3 - Cotacao do Peso Argentino          
+            A opção escolhida fica como:
+                   moeda, compra, venda, variacao, maximo, minimo, data_hora  
+                   """))
+
 while tabela < 3:
     if tabela == 1:
         cursor.execute('SELECT * FROM Cotacao_dolar')
