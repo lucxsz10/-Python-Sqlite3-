@@ -19,11 +19,10 @@ tabela = int(input("""
             1 - Cotacao do Dólar
             2 - Cotacao do Euro
             3 - Cotacao do Peso Argentino          
-            A opção escolhida fica como:
-                   moeda, compra, venda, variacao, maximo, minimo, data_hora  
-                   """))
+            """))
+                  
 
-while tabela < 3:
+while tabela < 4:
     if tabela == 1:
         cursor.execute('SELECT * FROM Cotacao_dolar')
         dados = cursor.fetchall()
