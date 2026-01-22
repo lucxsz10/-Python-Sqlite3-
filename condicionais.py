@@ -24,23 +24,27 @@ tabela = int(input("""
 
 while tabela < 4:
     if tabela == 1:
-        cursor.execute('SELECT * FROM Cotacao_dolar')
+        cursor.execute('SELECT venda FROM Cotacao_dolar')
         dados = cursor.fetchall()
         for linha in dados:
-            print(linha)
+            print(f"O valor do Dólar é: {linha}")
         break
     elif tabela == 2:
-        cursor.execute('SELECT * FROM Cotacao_euro')
+        cursor.execute('SELECT venda FROM Cotacao_euro')
         dados = cursor.fetchall()
         for linha in dados:
-            print(linha)
+            print(f"O valor do Euro é: {linha}")
         break
     elif tabela == 3:
-        cursor.execute('SELECT * FROM Peso_argentino')
+        cursor.execute('SELECT venda FROM Peso_argentino')
         dados = cursor.fetchall()
         for linha in dados:
-            print(linha)
+            print(f"O valor do Peso Argentino é: {linha}")
         break
     else:
         print("Opção inválida. Tente novamente.")
-        
+    
+
+
+    conn.commit()
+    conn.close()
