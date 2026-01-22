@@ -1,5 +1,5 @@
-import sqlite3 as sql 
-import pandas as pd 
+import sqlite3 as sql
+import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -20,7 +20,7 @@ tabela = int(input("""
             2 - Cotacao do Euro
             3 - Cotacao do Peso Argentino          
             """))
-                  
+
 
 while tabela < 4:
     if tabela == 1:
@@ -43,8 +43,6 @@ while tabela < 4:
         break
     else:
         print("Opção inválida. Tente novamente.")
-    
-
 
     conn.commit()
     conn.close()
